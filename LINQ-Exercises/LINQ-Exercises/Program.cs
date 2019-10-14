@@ -36,9 +36,19 @@ namespace LINQ_Exercises
                 Console.WriteLine(i.name);
             } */
 
+            /* ÖVNING 3
             var query = from names in countries
                         orderby names.name ascending
                         select names;
+
+            foreach (var country in query)
+            {
+                Console.WriteLine(country.name);
+            } */
+
+            var query = from country in countries
+                        orderby country.population descending
+                        select country;
 
             foreach (var country in query)
             {
