@@ -25,14 +25,24 @@ namespace LINQ_Exercises
             countries.Add(finland);
             countries.Add(belgium);
 
-            var query = from country in countries
+            /* Övning 2
+                var query = from country in countries
                         where country == countries.First() || country == countries.Last()
                         select country;
 
 
             foreach (var i in query)
             {
-                Console.WriteLine(i.name + " ");
+                Console.WriteLine(i.name);
+            } */
+
+            var query = from names in countries
+                        orderby names.name ascending
+                        select names;
+
+            foreach (var country in query)
+            {
+                Console.WriteLine(country.name);
             }
             Console.ReadKey();
             
