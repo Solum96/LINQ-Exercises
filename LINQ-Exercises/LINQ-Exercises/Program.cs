@@ -25,6 +25,18 @@ namespace LINQ_Exercises
             countries.Add(finland);
             countries.Add(belgium);
 
+            var query = from country in countries
+                        where country == countries.First() || country == countries.Last()
+                        select country;
+
+
+            foreach (var i in query)
+            {
+                Console.WriteLine(i.name + " ");
+            }
+            Console.ReadKey();
+            
+
 
         }
     }
