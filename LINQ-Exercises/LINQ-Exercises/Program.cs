@@ -138,9 +138,20 @@ namespace LINQ_Exercises
             {
                 Console.WriteLine(item.name + item.population);
             } */
-            Console.ReadKey(); 
-            
 
+            /* ÖVNING 12
+            var query = from country in countries
+                        orderby country.population
+                        where country.population > 7
+                        select country;
+
+            var threeFirst = query.Take(3);
+
+            foreach (var item in threeFirst)
+            {
+                Console.WriteLine(item.name + item.population);
+            } */
+            Console.ReadKey(); 
 
         }
     }
