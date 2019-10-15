@@ -230,6 +230,7 @@ namespace LINQ_Exercises
                 Console.WriteLine(item.name);
             } */
 
+            /* ÖVNING 18
             var query = from country in countries
                         orderby country.area ascending
                         select country;
@@ -238,7 +239,13 @@ namespace LINQ_Exercises
             var bigThree = query.Reverse().Take(3);
 
             Console.WriteLine(smallSix.Sum((c) => c.population));
-            Console.WriteLine(bigThree.Sum((c) => c.population));
+            Console.WriteLine(bigThree.Sum((c) => c.population)); */
+
+            var query = from country in countries
+                        where country.name.Count() >= 7
+                        select country;
+
+            Console.WriteLine(query.Sum((c) => c.population));
 
             Console.ReadKey(); 
 
