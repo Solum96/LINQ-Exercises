@@ -108,6 +108,15 @@ namespace LINQ_Exercises
             Console.WriteLine(">10000 = " + query2.Count());
             Console.WriteLine(">100000 = " + query3.Count()); */
 
+            /* ÖVNING 9
+            var query = from country in countries
+                        where country.capital[0] == country.name[0]
+                        select country;
+
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.name);
+            } */
             Console.ReadKey(); 
             
 
