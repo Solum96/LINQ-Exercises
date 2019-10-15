@@ -46,6 +46,7 @@ namespace LINQ_Exercises
                 Console.WriteLine(country.name);
             } */
 
+            /* ÖVNING 4
             var query = from country in countries
                         orderby country.population descending
                         select country;
@@ -53,8 +54,18 @@ namespace LINQ_Exercises
             foreach (var country in query)
             {
                 Console.WriteLine(country.name);
-            }
-            Console.ReadKey();
+            } */
+
+
+            /* ÖVNING 5
+            var query = from country in countries
+                        orderby country.population descending
+                        select country;
+
+            Console.WriteLine(query.First().population); */
+
+
+            Console.ReadKey(); 
             
 
 
