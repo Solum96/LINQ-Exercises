@@ -128,7 +128,16 @@ namespace LINQ_Exercises
                 Console.WriteLine($"Namn: {item.name}. Huvudstad: {item.capital}.");
             } */
 
+            /* ÖVNING 11
+            var query = from country in countries
+                        orderby country.population ascending
+                        select country;
 
+            var fiveFirst = query.Take(5);
+            foreach (var item in fiveFirst)
+            {
+                Console.WriteLine(item.name + item.population);
+            } */
             Console.ReadKey(); 
             
 
