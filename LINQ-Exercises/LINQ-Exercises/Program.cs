@@ -19,6 +19,9 @@ namespace LINQ_Exercises
             Country belgium = new Country("Belgien", "Bryssel", 11.30, 30528);
             Country germany = new Country("Tyskland", "Berlin", 82.18, 357168);
             Country greece = new Country("Grekland", "Aten", 11.18, 131957);
+            Country monoglia = new Country("Mongoliet", "Kuala Lumpur", 3.08, 1566000);
+            Country france = new Country("Frankrike", "Paris", 66.99, 640679);
+            Country niue = new Country("Niue", "Alofi", 0.0016, 261);
 
             countries.Add(sweden);
             countries.Add(norway);
@@ -28,7 +31,9 @@ namespace LINQ_Exercises
             countries.Add(belgium);
             countries.Add(germany);
             countries.Add(greece);
-
+            countries.Add(monoglia);
+            countries.Add(france);
+            countries.Add(niue);
             /* Övning 2
                 var query = from country in countries
                         where country == countries.First() || country == countries.Last()
@@ -138,9 +143,75 @@ namespace LINQ_Exercises
             {
                 Console.WriteLine(item.name + item.population);
             } */
-            Console.ReadKey(); 
-            
 
+            /* ÖVNING 12
+            var query = from country in countries
+                        orderby country.population
+                        where country.population > 7
+                        select country;
+
+            var threeFirst = query.Take(3);
+
+            foreach (var item in threeFirst)
+            {
+                Console.WriteLine(item.name + item.population);
+            } */
+
+            /* ÖVNING 13
+            var query = from country in countries
+                        orderby country.name ascending
+                        where country.area > 500000
+                        select country;
+            var threeFirst = query.Take(3);
+
+            foreach (var item in threeFirst)
+            {
+                Console.WriteLine(item.name);
+            } */
+
+            /* ÖVNING 14
+            var query = from country in countries
+                        orderby country.name ascending
+                        group country by country.name[0];
+
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.Key);
+                foreach (var i in item)
+                {
+                    Console.WriteLine(i.name);
+                }
+            } */
+
+            var zeroMil = from country in countries
+                              where Math.Round(country.population, 0) < 1 // 0 Million
+                              select country;
+
+            var fiveMil = from country in countries
+                              where Math.Round(country.population, 0) == 5 // 5 Million
+                              select country;
+
+            var tenMil = from country in countries
+                              where Math.Round(country.population, 0) == 10 // 10 Million
+                              select country;
+
+            Console.WriteLine("0 Million:");
+            foreach (var item in zeroMil)
+            {
+                Console.WriteLine("- " + item.name);
+            }
+            Console.WriteLine("5 Million");
+            foreach (var item in fiveMil)
+            {
+                Console.WriteLine("- " + item.name);
+            }
+            Console.WriteLine("10 Million");
+            foreach (var item in tenMil)
+            {
+                Console.WriteLine("- " + item.name);
+            }
+
+            Console.ReadKey(); 
 
         }
     }
