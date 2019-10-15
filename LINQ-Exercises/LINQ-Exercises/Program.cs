@@ -117,6 +117,18 @@ namespace LINQ_Exercises
             {
                 Console.WriteLine(item.name);
             } */
+
+            /* ÖVNING 10
+            var query = from country in countries
+                        where country.name.Count() > country.capital.Count()
+                        select country;
+
+            foreach (var item in query)
+            {
+                Console.WriteLine($"Namn: {item.name}. Huvudstad: {item.capital}.");
+            } */
+
+
             Console.ReadKey(); 
             
 
