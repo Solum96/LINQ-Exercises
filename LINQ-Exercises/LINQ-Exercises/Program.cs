@@ -183,6 +183,7 @@ namespace LINQ_Exercises
                 }
             } */
 
+            /* ÖVNING 15
             var zeroMil = from country in countries
                               where Math.Round(country.population, 0) < 1 // 0 Million
                               select country;
@@ -209,6 +210,14 @@ namespace LINQ_Exercises
             foreach (var item in tenMil)
             {
                 Console.WriteLine("- " + item.name);
+            } */
+
+            var query = from country in countries
+                        select country;
+
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.name + " " + item.population * 1000000);
             }
 
             Console.ReadKey(); 
