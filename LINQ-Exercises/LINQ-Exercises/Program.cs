@@ -221,13 +221,24 @@ namespace LINQ_Exercises
                 Console.WriteLine(item.name + "s trångboddhet:  " + (Math.Round(item.population * 1000000 / item.area, 2)) + " person/km^2");
             } */
 
+            /* ÖVNING 17
             var query = from country in countries
                         orderby new string(country.capital.Reverse().ToArray()) ascending
                         select country;
             foreach (var item in query)
             {
                 Console.WriteLine(item.name);
-            }
+            } */
+
+            var query = from country in countries
+                        orderby country.area ascending
+                        select country;
+
+            var smallSix = query.Take(6);
+            var bigThree = query.Reverse().Take(3);
+
+            Console.WriteLine(smallSix.Sum((c) => c.population));
+            Console.WriteLine(bigThree.Sum((c) => c.population));
 
             Console.ReadKey(); 
 
