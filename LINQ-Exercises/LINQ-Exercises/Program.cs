@@ -183,6 +183,7 @@ namespace LINQ_Exercises
                 }
             } */
 
+            /* ÖVNING 15
             var zeroMil = from country in countries
                               where Math.Round(country.population, 0) < 1 // 0 Million
                               select country;
@@ -209,6 +210,23 @@ namespace LINQ_Exercises
             foreach (var item in tenMil)
             {
                 Console.WriteLine("- " + item.name);
+            } */
+
+            /* ÖVNING 16ab
+            var query = from country in countries
+                        select country;
+
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.name + "s trångboddhet:  " + (Math.Round(item.population * 1000000 / item.area, 2)) + " person/km^2");
+            } */
+
+            var query = from country in countries
+                        orderby new string(country.capital.Reverse().ToArray()) ascending
+                        select country;
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.name);
             }
 
             Console.ReadKey(); 
