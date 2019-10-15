@@ -18,6 +18,7 @@ namespace LINQ_Exercises
             Country finland = new Country("Finland", "Helsingfors", 5.51, 338424);
             Country belgium = new Country("Belgien", "Bryssel", 11.30, 30528);
             Country germany = new Country("Tyskland", "Berlin", 82.18, 357168);
+            Country greece = new Country("Grekland", "Aten", 11.18, 131957);
 
             countries.Add(sweden);
             countries.Add(norway);
@@ -26,6 +27,7 @@ namespace LINQ_Exercises
             countries.Add(finland);
             countries.Add(belgium);
             countries.Add(germany);
+            countries.Add(greece);
 
             /* Övning 2
                 var query = from country in countries
@@ -80,7 +82,30 @@ namespace LINQ_Exercises
                 Console.WriteLine(item.name);
             } */
 
+            /* ÖVNING 7
+            var query = from country in countries
+                        where country.population < 5
+                        select country;
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.name);
+            } */
 
+            var query1 = from country in countries
+                         where country.area > 1000
+                         select country;
+
+            var query2 = from country in countries
+                         where country.area > 10000
+                         select country;
+
+            var query3 = from country in countries
+                         where country.area > 100000
+                         select country;
+
+            Console.WriteLine(">1000 = " + query1.Count());
+            Console.WriteLine(">10000 = " + query2.Count());
+            Console.WriteLine(">100000 = " + query3.Count());
             Console.ReadKey(); 
             
 
