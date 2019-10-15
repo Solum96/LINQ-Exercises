@@ -217,7 +217,7 @@ namespace LINQ_Exercises
 
             foreach (var item in query)
             {
-                Console.WriteLine(item.name + " " + item.population * 1000000);
+                Console.WriteLine(item.name + "s trångboddhet:  " + (Math.Round(item.population * 1000000 / item.area, 2)) + " person/km^2");
             }
 
             Console.ReadKey(); 
