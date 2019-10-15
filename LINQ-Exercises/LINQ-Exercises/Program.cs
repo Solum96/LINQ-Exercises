@@ -91,6 +91,7 @@ namespace LINQ_Exercises
                 Console.WriteLine(item.name);
             } */
 
+            /* ÖVNING 8
             var query1 = from country in countries
                          where country.area > 1000
                          select country;
@@ -105,7 +106,8 @@ namespace LINQ_Exercises
 
             Console.WriteLine(">1000 = " + query1.Count());
             Console.WriteLine(">10000 = " + query2.Count());
-            Console.WriteLine(">100000 = " + query3.Count());
+            Console.WriteLine(">100000 = " + query3.Count()); */
+
             Console.ReadKey(); 
             
 
